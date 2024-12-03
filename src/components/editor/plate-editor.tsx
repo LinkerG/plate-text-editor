@@ -4,13 +4,20 @@ import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
+import { Value } from '@udecode/plate-common';
 import { Plate } from '@udecode/plate-common/react';
 
 import { useCreateEditor } from '@/components/editor/use-create-editor';
 import { Editor, EditorContainer } from '@/components/plate-ui/editor';
 
-export function PlateEditor() {
+interface Props {
+  initialText?: Value;
+  readonly?: boolean;
+}
+
+export function PlateEditor({ initialText, readonly = false }: Props) {
   const editor = useCreateEditor();
+  if (initialText) editor.children = initialText;
 
   const handleExport = () => {
     const markdown = editor.api.markdown.serialize();
@@ -21,9 +28,11 @@ export function PlateEditor() {
     console.log('comments :>> ', comments);
   };
 
+  // TODO: add style to editor so it looks like paper
+
   return (
     <DndProvider backend={HTML5Backend}>
-      <Plate editor={editor}>
+      <Plate readOnly={readonly} editor={editor}>
         <EditorContainer>
           <Editor variant="demo" />
         </EditorContainer>

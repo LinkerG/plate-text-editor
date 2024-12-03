@@ -42,6 +42,7 @@ import {
   TableRowPlugin,
 } from '@udecode/plate-table/react';
 import { TogglePlugin } from '@udecode/plate-toggle/react';
+// import { Descendant } from 'slate';
 
 import { editorPlugins } from '@/components/editor/plugins/editor-plugins';
 import { FixedToolbarPlugin } from '@/components/editor/plugins/fixed-toolbar-plugin';
@@ -122,36 +123,5 @@ export const useCreateEditor = () => {
       ),
     },
     plugins: [...editorPlugins, FixedToolbarPlugin, FloatingToolbarPlugin],
-    value: [
-      {
-        children: [{ text: 'Este es el editor de texto' }],
-        type: 'h1',
-      },
-      {
-        align: 'center',
-        children: [{ text: 'Se puede alinear al centro' }],
-        type: ParagraphPlugin.key,
-      },
-      {
-        align: 'right',
-        children: [{ text: 'Y a la derecha' }],
-        type: 'paragraph',
-      },
-      {
-        children: [
-          { bold: true, text: 'Se puede poner en negrita, ' },
-          { text: 'subrayado, ', underline: true },
-          { italic: true, text: 'cursiva, ' },
-          {
-            bold: true,
-            italic: true,
-            text: 'o todo a la vez',
-            underline: true,
-          },
-          { text: '.' },
-        ],
-        type: ParagraphPlugin.key,
-      },
-    ],
   });
 };
