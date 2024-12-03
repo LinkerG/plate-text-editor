@@ -30,7 +30,6 @@ import { KbdPlugin } from '@udecode/plate-kbd/react';
 import { ColumnItemPlugin, ColumnPlugin } from '@udecode/plate-layout/react';
 import { LinkPlugin } from '@udecode/plate-link/react';
 import { MarkdownPlugin } from '@udecode/plate-markdown';
-import { PlaceholderPlugin } from '@udecode/plate-media/react';
 import {
   MentionInputPlugin,
   MentionPlugin,
@@ -62,7 +61,6 @@ import { HighlightLeaf } from '@/components/plate-ui/highlight-leaf';
 import { HrElement } from '@/components/plate-ui/hr-element';
 import { KbdLeaf } from '@/components/plate-ui/kbd-leaf';
 import { LinkElement } from '@/components/plate-ui/link-element';
-import { MediaPlaceholderElement } from '@/components/plate-ui/media-placeholder-element';
 import { MentionElement } from '@/components/plate-ui/mention-element';
 import { MentionInputElement } from '@/components/plate-ui/mention-input-element';
 import { ParagraphElement } from '@/components/plate-ui/paragraph-element';
@@ -109,7 +107,6 @@ export const useCreateEditor = () => {
           [MentionInputPlugin.key]: MentionInputElement,
           [MentionPlugin.key]: MentionElement,
           [ParagraphPlugin.key]: ParagraphElement,
-          [PlaceholderPlugin.key]: MediaPlaceholderElement,
           [SlashInputPlugin.key]: SlashInputElement,
           [StrikethroughPlugin.key]: withProps(PlateLeaf, { as: 's' }),
           [SubscriptPlugin.key]: withProps(PlateLeaf, { as: 'sub' }),

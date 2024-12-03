@@ -21,7 +21,6 @@ import { LinkToolbarButton } from './link-toolbar-button';
 import { MarkToolbarButton } from './mark-toolbar-button';
 import { MoreDropdownMenu } from './more-dropdown-menu';
 import { ToolbarGroup } from './toolbar';
-import { TurnIntoDropdownMenu } from './turn-into-dropdown-menu';
 
 export function FloatingToolbarButtons() {
   const readOnly = useEditorReadOnly();
@@ -31,8 +30,6 @@ export function FloatingToolbarButtons() {
       {!readOnly && (
         <>
           <ToolbarGroup>
-            <TurnIntoDropdownMenu />
-
             <MarkToolbarButton nodeType={BoldPlugin.key} tooltip="Bold (⌘+B)">
               <BoldIcon />
             </MarkToolbarButton>
@@ -57,7 +54,7 @@ export function FloatingToolbarButtons() {
             >
               <StrikethroughIcon />
             </MarkToolbarButton>
-
+            <MoreDropdownMenu />
             <LinkToolbarButton />
           </ToolbarGroup>
         </>
@@ -65,8 +62,6 @@ export function FloatingToolbarButtons() {
 
       <ToolbarGroup>
         <CommentToolbarButton />
-
-        {!readOnly && <MoreDropdownMenu />}
       </ToolbarGroup>
     </>
   );

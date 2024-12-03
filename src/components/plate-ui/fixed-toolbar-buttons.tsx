@@ -31,6 +31,7 @@ import { IndentToolbarButton } from './indent-toolbar-button';
 import { LineHeightDropdownMenu } from './line-height-dropdown-menu';
 import { LinkToolbarButton } from './link-toolbar-button';
 import { MarkToolbarButton } from './mark-toolbar-button';
+import { MoreDropdownMenu } from './more-dropdown-menu';
 import { OutdentToolbarButton } from './outdent-toolbar-button';
 import { ToolbarGroup } from './toolbar';
 
@@ -39,7 +40,7 @@ export function FixedToolbarButtons() {
 
   return (
     <div className="flex w-full">
-      {readOnly ? (
+      {!readOnly ? (
         <>
           <ToolbarGroup>
             <UndoToolbarButton />
@@ -78,6 +79,7 @@ export function FixedToolbarButtons() {
             >
               <BaselineIcon />
             </ColorDropdownMenu>
+            <MoreDropdownMenu />
           </ToolbarGroup>
 
           <ToolbarGroup>

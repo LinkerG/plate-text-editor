@@ -12,7 +12,7 @@ import { Editor, EditorContainer } from '@/components/plate-ui/editor';
 export function PlateEditor() {
   const editor = useCreateEditor();
 
-  const handleExportToMarkdown = () => {
+  const handleExport = () => {
     const markdown = editor.api.markdown.serialize();
     const data = editor.children;
     const comments = editor.plugins.comment.optionsStore.get.comments();
@@ -30,9 +30,9 @@ export function PlateEditor() {
         <div className="mt-4">
           <button
             className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700"
-            onClick={handleExportToMarkdown}
+            onClick={handleExport}
           >
-            Exportar a Markdown
+            Exportar a consola
           </button>
         </div>
       </Plate>

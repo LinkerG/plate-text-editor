@@ -7,11 +7,8 @@ import {
   SubscriptPlugin,
   SuperscriptPlugin,
 } from '@udecode/plate-basic-marks/react';
-import { collapseSelection } from '@udecode/plate-common';
 import { focusEditor, useEditorRef } from '@udecode/plate-common/react';
-import { KbdPlugin } from '@udecode/plate-kbd/react';
 import {
-  KeyboardIcon,
   MoreHorizontalIcon,
   SubscriptIcon,
   SuperscriptIcon,
@@ -34,7 +31,7 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
   return (
     <DropdownMenu modal={false} {...openState} {...props}>
       <DropdownMenuTrigger asChild>
-        <ToolbarButton pressed={openState.open} tooltip="Insert">
+        <ToolbarButton pressed={openState.open} tooltip="More">
           <MoreHorizontalIcon />
         </ToolbarButton>
       </DropdownMenuTrigger>
@@ -44,17 +41,6 @@ export function MoreDropdownMenu(props: DropdownMenuProps) {
         align="start"
       >
         <DropdownMenuGroup>
-          <DropdownMenuItem
-            onSelect={() => {
-              editor.tf.toggle.mark({ key: KbdPlugin.key });
-              collapseSelection(editor, { edge: 'end' });
-              focusEditor(editor);
-            }}
-          >
-            <KeyboardIcon />
-            Keyboard input
-          </DropdownMenuItem>
-
           <DropdownMenuItem
             onSelect={() => {
               editor.tf.toggle.mark({
