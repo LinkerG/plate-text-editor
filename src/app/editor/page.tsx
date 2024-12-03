@@ -5,10 +5,7 @@ import { PlateEditor } from '@/components/editor/plate-editor';
 export default function Page() {
   const initialText: Value = [
     {
-      children: [
-        { text: 'Este es el editor de ' },
-        { comment: true, comment_5miboEvSri1omuvFcZmtA: true, text: 'texto' },
-      ],
+      children: [{ text: 'Este es el editor de texto' }],
       type: 'h1',
     },
     {
@@ -23,9 +20,12 @@ export default function Page() {
     },
     {
       children: [
-        { bold: true, text: 'Se puede poner en negrita, ' },
-        { text: 'subrayado, ', underline: true },
-        { italic: true, text: 'cursiva, ' },
+        { bold: true, text: 'Se puede poner en negrita' },
+        { text: ', ' },
+        { text: 'subrayado', underline: true },
+        { text: ', ' },
+        { italic: true, text: 'cursiva' },
+        { text: ', ' },
         {
           bold: true,
           italic: true,
@@ -33,6 +33,16 @@ export default function Page() {
           underline: true,
         },
         { text: '.' },
+      ],
+      type: 'p',
+    },
+    {
+      children: [
+        {
+          comment: true,
+          comment_5miboEvSri1omuvFcZmtA: true,
+          text: 'Y soporta comentarios',
+        },
       ],
       type: 'p',
     },
