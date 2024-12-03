@@ -99,6 +99,10 @@ export function FixedToolbarButtons() {
             <OutdentToolbarButton />
             <IndentToolbarButton />
           </ToolbarGroup>
+
+          <ToolbarGroup>
+            <CommentToolbarButton />
+          </ToolbarGroup>
         </>
       ) : (
         <>

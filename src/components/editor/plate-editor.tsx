@@ -4,20 +4,24 @@ import React from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
-import { Value } from '@udecode/plate-common';
+import { TComment } from '@udecode/plate-comments';
+import { Value, WithPartial } from '@udecode/plate-common';
 import { Plate } from '@udecode/plate-common/react';
 
 import { useCreateEditor } from '@/components/editor/use-create-editor';
 import { Editor, EditorContainer } from '@/components/plate-ui/editor';
 
 interface Props {
-  initialText?: Value;
+  comments?: WithPartial<TComment, 'createdAt' | 'id' | 'userId'>[];
   readonly?: boolean;
+  text?: Value;
 }
 
-export function PlateEditor({ initialText, readonly = false }: Props) {
+export function PlateEditor({ comments, readonly = false, text }: Props) {
   const editor = useCreateEditor();
-  if (initialText) editor.children = initialText;
+  if (text) editor.children = text;
+  if (comments)
+    comments.map((comment) => editor.api.comment.addComment(comment));
 
   const handleExport = () => {
     const markdown = editor.api.markdown.serialize();
@@ -25,6 +29,7 @@ export function PlateEditor({ initialText, readonly = false }: Props) {
     const comments = editor.plugins.comment.optionsStore.get.comments();
     console.log('markdown :>> ', markdown);
     console.log('data :>> ', data);
+    console.log('typeof comments :>> ', typeof comments);
     console.log('comments :>> ', comments);
   };
 
