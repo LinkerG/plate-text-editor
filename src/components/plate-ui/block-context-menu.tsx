@@ -2,7 +2,6 @@
 
 import { useCallback, useState } from 'react';
 
-import { AIChatPlugin } from '@udecode/plate-ai/react';
 import { BlockquotePlugin } from '@udecode/plate-block-quote/react';
 import { unsetNodes } from '@udecode/plate-common';
 import {
@@ -101,10 +100,6 @@ export function BlockContextMenu({ children }: { children: React.ReactNode }) {
         onCloseAutoFocus={(e) => {
           e.preventDefault();
           editor.getApi(BlockSelectionPlugin).blockSelection.focus();
-
-          if (value === 'askAI') {
-            editor.getApi(AIChatPlugin).aiChat.show();
-          }
 
           setValue(null);
         }}

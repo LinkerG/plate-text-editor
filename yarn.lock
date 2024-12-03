@@ -1131,15 +1131,6 @@
   dependencies:
     "@udecode/react-utils" "39.0.0"
 
-"@udecode/plate-ai@40.2.2":
-  version "40.2.2"
-  resolved "https://registry.yarnpkg.com/@udecode/plate-ai/-/plate-ai-40.2.2.tgz#037bf30e1b92974fb0ede66ddb58c346c4aae10d"
-  integrity sha512-KwDch4ESGqfuX51NDnf6OxeJiEeW7ebs9i2M6EX+L2DJHSfAwUMop0G8AH/bqSwM/bIfrk58Sqqmvo36XvbYIw==
-  dependencies:
-    "@udecode/plate-markdown" "40.2.2"
-    "@udecode/plate-selection" "40.1.0"
-    lodash "^4.17.21"
-
 "@udecode/plate-alignment@^40.0.0":
   version "40.0.0"
   resolved "https://registry.yarnpkg.com/@udecode/plate-alignment/-/plate-alignment-40.0.0.tgz#c7acd4bf38fcffe9c81a907c2937edb18b5829ba"
@@ -1355,7 +1346,7 @@
     "@udecode/plate-reset-node" "40.0.0"
     lodash "^4.17.21"
 
-"@udecode/plate-markdown@40.2.2", "@udecode/plate-markdown@^40.2.2":
+"@udecode/plate-markdown@^40.2.2":
   version "40.2.2"
   resolved "https://registry.yarnpkg.com/@udecode/plate-markdown/-/plate-markdown-40.2.2.tgz#438c9e8ffe6bca43099e87ebb56b106da9225223"
   integrity sha512-SvAF6WFustu/4R2/DMe4RzcDhQlwLSZNaPA9V6oZ/Yn10EPkbprkd47zSF81HYF4qOcEyUw33VbFoTGEibyheg==

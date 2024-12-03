@@ -3,7 +3,6 @@
 import React from 'react';
 
 import { withRef } from '@udecode/cn';
-import { AIChatPlugin } from '@udecode/plate-ai/react';
 import { BlockquotePlugin } from '@udecode/plate-block-quote/react';
 import { CodeBlockPlugin } from '@udecode/plate-code-block/react';
 import { type PlateEditor, ParagraphPlugin } from '@udecode/plate-common/react';
@@ -25,7 +24,6 @@ import {
   ListOrdered,
   PilcrowIcon,
   Quote,
-  SparklesIcon,
   Square,
   Table,
   TableOfContentsIcon,
@@ -65,19 +63,6 @@ interface Item {
 }
 
 const groups: Group[] = [
-  {
-    group: 'AI',
-    items: [
-      {
-        focusEditor: false,
-        icon: <SparklesIcon />,
-        value: 'AI',
-        onSelect: (editor) => {
-          editor.getApi(AIChatPlugin).aiChat.show();
-        },
-      },
-    ],
-  },
   {
     group: 'Basic blocks',
     items: [
