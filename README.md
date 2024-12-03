@@ -1,4 +1,4 @@
-# Playground Template
+# Plate text editor
 
 A Next.js 15 template with [Plate](https://platejs.org/)
 
