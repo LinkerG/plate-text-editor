@@ -64,7 +64,7 @@ export default function Page() {
 
   return (
     <div className="w-full flex justify-center items-center p-5">
-      <div className="w-4/5 border" data-registry="plate">
+      <div className="w-4/5" data-registry="plate">
         <PlateEditor comments={initialComments} text={initialText} />
       </div>
     </div>
