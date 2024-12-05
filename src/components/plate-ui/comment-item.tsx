@@ -25,7 +25,7 @@ function CommentItemContent() {
   return (
     <div>
       <div className="relative flex items-center gap-2">
-        <h4 className="text-sm font-semibold leading-none">{comment.userId}</h4>
+        <h4 className="text-sm font-semibold leading-none">{comment.userName}</h4>
 
         <div className="text-xs leading-none text-muted-foreground">
           {formatDistance(comment.createdAt, Date.now())} ago

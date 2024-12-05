@@ -40,7 +40,7 @@ export default function Page() {
       children: [
         {
           comment: true,
-          comment_5miboEvSri1omuvFcZmtA: true,
+          comment_1: true,
           text: 'Y soporta comentarios',
         },
       ],
@@ -50,9 +50,10 @@ export default function Page() {
 
   const initialComments = [
     {
-      id: '5miboEvSri1omuvFcZmtA',
+      id: '1',
       createdAt: 1733220854919,
       userId: 'manolito gafotas',
+      userName: 'asd',
       value: [
         {
           children: [{ text: 'Comentario prueba' }],
@@ -65,7 +66,7 @@ export default function Page() {
   return (
     <div className="w-full flex justify-center items-center p-5">
       <div className="w-4/5" data-registry="plate">
-        <PlateEditor comments={initialComments} text={initialText} />
+        <PlateEditor readonly text={initialText} />
       </div>
     </div>
   );
